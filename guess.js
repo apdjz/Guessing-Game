@@ -15,7 +15,7 @@ function startGame(){
 	return new game();
 }
 function randomNumberGenerator(){
- return Math.floor((Math.random() * 2) + 1);
+ return Math.floor((Math.random() * 100) + 1);
 }
 
 game.prototype.closeness = function(){
@@ -53,6 +53,7 @@ game.prototype.checkGuess = function() {
                 else{
 					document.getElementById("status").innerHTML = "Ice Cold";
 					document.body.style.backgroundImage = "url('ice-background-14140151326az.jpg')";
+                }
             }
         }
     }
