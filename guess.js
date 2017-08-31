@@ -1,6 +1,9 @@
+window.onload = function (){
+startGame();
+};
 function makeGuess(){
 	var guess = document.getElementById("num").value;
-	game.prototype.playersGuessSubmission = function(guess);
+	game.prototype.playersGuessSubmission(guess);
 }
 function game(){
 	this.pGuess = null;
@@ -40,16 +43,16 @@ game.prototype.checkGuess = function() {
 				entry.appendChild(document.createTextNode(this.guess));
 				unordered.appendChild(entry); 
                 var diff = this.closeness();
-                if(diff < 10)(
+                if(diff < 10){
 					document.getElementById("status").innerHTML = "Hot";
-					document.getElementById("status").style.text-shadow = "0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e";
+					document.getElementById("status").style.textShadow  = '0 0 20px #fefcc9, 10px -10px 30px #feec85, -20px -20px 40px #ffae34, 20px -40px 50px #ec760c, -20px -60px 60px #cd4606, 0 -80px 70px #973716, 10px -90px 80px #451b0e';
 					document.getElementById("status").style.color = "#FFCC00";
-			}
+				}
                 else if(diff < 25) document.getElementById("status").innerHTML = "Warm";
                 else if(diff < 50) document.getElementById("status").innerHTML = "Cold";
                 else{
 					document.getElementById("status").innerHTML = "Ice Cold";
-					document.getElementById("status").style.background-image ="url('ice-background-14140151326az.jpg')";
+					document.body.style.backgroundImage = "url('ice-background-14140151326az.jpg')";
             }
         }
     }
@@ -63,7 +66,7 @@ game.prototype.playersGuessSubmission = function(guess) {
 }
 
 function hint(){
-	game.prototype.provideHint = function();
+	game.prototype.provideHint();
 }
 
 
@@ -79,5 +82,6 @@ function shuffle(arr) { //Fisher-Yates - https://bost.ocks.org/mike/shuffle/
        arr[i] = arr[randomIndex];
        arr[randomIndex] = temp;
     }
+	document.getElementById("status").innerHTML = "Guessing Game";
     return arr;
 }

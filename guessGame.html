@@ -7,13 +7,14 @@
   <meta name="Guessing Game" content="Guessing Game">
   <meta name="Andrew Ziegler" content="SitePoint">
   <link rel="stylesheet" type="text/css" href="guess.css">
-  <!-- <script src="guess.js"></script>-->
+  
+
 
   <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
 </head>
-<<body onload="startGame()">>
+<body>
 	<div id="container" class="centered">
 		<div >
 			<h1 id="status">Guessing Game</h1>
@@ -21,11 +22,11 @@
 		<div id="window">
 			<h3>Guess a number between 1-100!</h3>
 			 <input type="text" id="num" value="#"><br>
-			  <button onclick="makeGuess()">Enter your guess</button>
+			  <button onclick="makeGuess()" id="nGuess">Enter your guess</button>
 			  <p id="demo"></p>
 		</div>
 		<div id="choice">
-			<button type="reset">Reset</button>
+			<button type="submit">Reset</button>
 			<button type="button" onclick="hint()">Hint</button>
 			</div>
 	</div>
