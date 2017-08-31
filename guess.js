@@ -2,25 +2,28 @@ window.onload = function (){
 startGame();
 };
 function makeGuess(){
-	var guess = document.getElementById("num").value;
+	var guess =  parseInt(document.getElementById("num").value);
 	game.prototype.playersGuessSubmission(guess);
 }
-function game(){
+var game = function(){
 	this.pGuess = null;
 	this.rand = randomNumberGenerator();
 	this.last=[];
 
 }
-function startGame(){
-	return new game();
-}
+
 function randomNumberGenerator(){
  return Math.floor((Math.random() * 100) + 1);
+}
+
+function startGame(){
+	return new game();
 }
 
 game.prototype.closeness = function(){
 	return Math.abs(pGuess-rand);
 }
+
 game.prototype.isLower = function() {
     return this.pGuess < this.rand;
 }
@@ -53,10 +56,10 @@ game.prototype.checkGuess = function() {
                 else{
 					document.getElementById("status").innerHTML = "Ice Cold";
 					document.body.style.backgroundImage = "url('ice-background-14140151326az.jpg')";
-                }
-            }
-        }
-    }
+				}
+			}
+		}
+	}
 }
 game.prototype.playersGuessSubmission = function(guess) {
     if(typeof guess !== 'number' || guess < 1 || guess > 100) {
