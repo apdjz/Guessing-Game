@@ -2,8 +2,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: center; /* !!! */
-/*	background-image: url("ice-background-14140151326az.jpg");*/
-	background-image: url("3468811439_48da9e71eb_b.jpg");
+	background-image: url("../images/3468811439_48da9e71eb_b.jpg");
 }
 h1{
 	font-family: "Comic Sans MS","Times New Roman", Times, serif;
